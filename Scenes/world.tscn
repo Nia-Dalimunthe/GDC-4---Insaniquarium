@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwlytyvnyoi6c"]
+[gd_scene load_steps=6 format=3 uid="uid://bwlytyvnyoi6c"]
 
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_5aka8"]
 [ext_resource type="Texture2D" uid="uid://tt8dn3emg4f2" path="res://icon.svg" id="1_r2rq2"]
 [ext_resource type="PackedScene" uid="uid://bljyct6avnxxg" path="res://Scenes/snore.tscn" id="3_lnvfu"]
+[ext_resource type="PackedScene" uid="uid://fw1w2yt3n10u" path="res://Scenes/pause.tscn" id="4_i0y4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vd4fs"]
 size = Vector2(1280, 80)
@@ -81,6 +82,15 @@ action_mode = 0
 position = Vector2(424, 480)
 
 [node name="Pellets" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(672, 352)
+
+[node name="Pause" parent="Camera2D" instance=ExtResource("4_i0y4f")]
+visible = false
+offset_left = -8.0
+offset_right = -8.0
+scale = Vector2(4, 4)
 
 [connection signal="body_entered" from="Wall_bot" to="." method="_on_wall_bot_body_entered"]
 [connection signal="pressed" from="Click_area" to="." method="_on_click_area_pressed"]
