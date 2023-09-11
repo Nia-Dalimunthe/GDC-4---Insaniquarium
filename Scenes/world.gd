@@ -5,15 +5,9 @@ extends Node2D
 var paused = false
 var food = preload("res://Scenes/pelet.tscn")
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+
 func _ready():
 	Engine.time_scale = 1	
-=======
-func _ready():
-	Engine.time_scale = 1
->>>>>>> a6442f618bd497ba974f467c1a4df2eff122c759
  
 func _process(delta):
 	if Input.is_action_just_pressed("pause"):
@@ -28,10 +22,7 @@ func pauseMenu():
 		Engine.time_scale = 0
 	
 	paused = !paused
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> a6442f618bd497ba974f467c1a4df2eff122c759
+
 
 func _on_click_area_pressed():
 	var obj = food.instantiate()
